@@ -6,6 +6,7 @@
         price: 27.5,
         weight: 550,
         ingredients: 'sos rosii, mozzarella, ciuperci, salam, sunca presata, oregano, anghinare',
+        extras: 'mozzarella',
         images: [
             'images/4_stagioni-01.jpg',
             'images/4_stagioni-02.jpg',
@@ -27,6 +28,7 @@
         price: 25,
         weight: 450,
         ingredients: 'sos rosii, mozzarella, salam picant, oregano',
+        extras: 'chilly',
         images: [
             'images/diavola-01.jpg',
             'images/diavola-02.jpg',
@@ -48,6 +50,7 @@
         price: 17.5,
         weight: 350,
         ingredients: 'sos rosii, mozzarella, oregano',
+        extras: 'oregano',
         images: [],
         reviews: [{
             stars: 1,
@@ -70,4 +73,18 @@
     app.controller('StoreController', function() {
         this.products = pizzas;
     });
+
+    app.controller('TabController', function() {
+        this.tab = 1;
+
+        this.setTab = function(tab) {
+            this.tab = tab;
+        };
+
+        this.isSet = function(tab) {
+            return (this.tab === tab);
+        };
+    });
+
+    app.controller('GalleryController', function() {});
 })();
