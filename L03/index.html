@@ -18,8 +18,8 @@
                 <em class="pull-right">{{product.price | currency}}</em>
             </h3>
             <!-- Image Gallery  -->
-            <div class="gallery" ng-show='product.images.length'>
-                <img class="img img-circle img-thumbnail center-block" ng-src='{{product.images[0]}}' />
+            <div class="gallery" ng-show='product.images.length' ng-controller='GalleryController as gallery'>
+                <img class="img img-circle img-thumbnail center-block" ng-src='{{product.images[gallery.current]}}' />
                 <ul class='clearfix'>
                     <li ng-repeat='image in product.images' class='small-image pull-left thumbnail'>
                         <img ng-src='{{image}}' />
