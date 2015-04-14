@@ -70,4 +70,10 @@
     app.controller('StoreController', function() {
         this.products = pizzas;
     });
+    app.controller('GalleryController', function() {
+        this.current = 0;
+        this.setCurrent = function(current) {
+            this.current = current ? current : 0;
+        };
+    });
 })();
