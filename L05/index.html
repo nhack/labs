@@ -32,14 +32,8 @@
                     <li ng-class='{active: tab.isSet(2)}'><a href ng-click='tab.setTab(2)'>Extras</a></li>
                     <li ng-class='{active: tab.isSet(3)}'><a href ng-click='tab.setTab(3)'>Reviews</a></li>
                 </ul>
-                <div ng-show='tab.isSet(1)'>
-                    <h4>Ingredients</h4>
-                    <blockquote>{{product.ingredients}}</blockquote>
-                </div>
-                <div ng-show='tab.isSet(2)'>
-                    <h4>Extras: </h4>
-                    <blockquote>{{product.extras}}</blockquote>
-                </div>
+                <product-ingredients ng-show='tab.isSet(1)'></product-ingredients>
+                <div ng-show='tab.isSet(2)' product-extras></div>
                 <div ng-show='tab.isSet(3)'>
                     <!--  Product Reviews List -->
                     <ul>

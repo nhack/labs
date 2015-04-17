@@ -93,12 +93,26 @@
         };
     });
 
-    app.controller('ReviewController', function(){
+    app.controller('ReviewController', function() {
         this.review = {};
-        this.addReview = function(product){
+        this.addReview = function(product) {
             this.review.createdOn = Date.now();
             product.reviews.push(this.review);
             this.review = {};
+        }
+    });
+
+    app.directive('productIngredients', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'product-ingredients.htm'
+        };
+    });
+
+    app.directive('productExtras', function() {
+        return {
+            restrict: 'A',
+            templateUrl: 'product-extras.htm'
         }
     });
 })();
