@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app='pizzaStore'>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="app/pizza.css" />
+    <script type="text/javascript" src="vendor/angular.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/product/products.js"></script>
+</head>
+
+<body>
+    <article>
+        <header>
+            <h2 class='main-head'>Super Pizza Store!!!</h2>
+        </header>
+        <section id='main'>
+            <div ng-controller='StoreController as store'>
+                <!--  Products Container  -->
+                <div class="list-group">
+                    <!--  Product Container  -->
+                    <div ng-repeat='product in store.products' class="list-group-item">
+                        <!-- Product Title -->
+                        <product-title></product-title>
+                        <!-- Image Gallery  -->
+                        <product-gallery></product-gallery>
+                        <!-- Product Tabs  -->
+                        <product-tabs></product-tabs>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class='main-foot'>by <a href='www.irian.at'>Irian</a></div>
+        </footer>
+    </article>
+</body>
+
+</html>
