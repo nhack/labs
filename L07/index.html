@@ -5,8 +5,11 @@
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="app/pizza.css" />
     <script type="text/javascript" src="vendor/angular.js"></script>
+    <script type="text/javascript" src="vendor/angular-route.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/app.route.js"></script>
     <script type="text/javascript" src="app/store/store.controller.js"></script>
+    <script type="text/javascript" src="app/store/store.route.js"></script>
     <script type="text/javascript" src="components/product/products.js"></script>    
     <script type="text/javascript" src="components/product/extras/extras.directive.js"></script>
     <script type="text/javascript" src="components/product/gallery/gallery.directive.js"></script>
@@ -22,21 +25,7 @@
             <h2 class='main-head'>Super Pizza Store!!!</h2>
         </header>
         <section id='main'>
-            <div ng-controller='StoreController as store'>
-                <!--  Products Container  -->
-                <div class="list-group">
-                    <!--  Product Container  -->
-                    <div ng-repeat='product in store.products' class="list-group-item">
-                        <!-- Product Title -->
-                        <product-title></product-title>
-                        <!-- Image Gallery  -->
-                        <product-gallery></product-gallery>
-                        <!-- Product Tabs  -->
-                        <product-tabs></product-tabs>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
+            <div ng-view></div>
         </section>
         <footer>
             <div class='main-foot'>by <a href='www.irian.at'>Irian</a></div>

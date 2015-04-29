@@ -1,3 +1,3 @@
 (function() {
-    var app = angular.module('pizzaStore', ['pizzaStore.store', 'pizzaStore.products']);
+    var app = angular.module('pizzaStore', ['ngRoute','pizzaStore.store', 'pizzaStore.products']);
 })();
