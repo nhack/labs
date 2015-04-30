@@ -1,0 +1,8 @@
+<div class="gallery" ng-show='product.images.length'>
+    <img class="img img-circle img-thumbnail center-block" ng-src='{{gallery.decode(product.images[gallery.current])}}' />
+    <ul class='clearfix'>
+        <li ng-repeat='image in product.images' class='small-image pull-left thumbnail'>
+            <img ng-src='{{gallery.decode(image)}}' />
+        </li>
+    </ul>
+</div>
