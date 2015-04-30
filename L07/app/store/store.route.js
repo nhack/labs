@@ -1,7 +1,7 @@
 (function() {
     var app = angular.module('pizzaStore.store');
 
-    app.config(function($stateProvider) {
+    app.config(['$stateProvider', function($stateProvider) {
         $stateProvider
             .state('store', {
                 url: '/store',
@@ -9,5 +9,5 @@
                 controller: 'StoreController',
                 controllerAs: 'store'
             });
-    });
+    }]);
 })();
