@@ -5,6 +5,9 @@
         return {
             restrict: 'E',
             templateUrl: 'components/product/review/review.htm',
+            scope:{
+                product: '='
+            },
             controller: function(SERVER, $http) {
                 this.review = {};
 

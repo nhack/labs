@@ -4,7 +4,10 @@
     app.directive('productExtras', function() {
         return {
             restrict: 'EA',
-            templateUrl: 'components/product/extras/extras.htm'
+            templateUrl: 'components/product/extras/extras.htm',
+            scope: {
+            	product: '='
+            }
         }
     });
 })();

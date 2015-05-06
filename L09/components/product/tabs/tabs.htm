@@ -4,7 +4,7 @@
         <li ng-class='{active: tab.isSet(2)}'><a href ng-click='tab.setTab(2)'>Extras</a></li>
         <li ng-class='{active: tab.isSet(3)}'><a href ng-click='tab.setTab(3)'>Reviews</a></li>
     </ul>
-    <product-ingredients ng-show='tab.isSet(1)'></product-ingredients>
-    <product-extras ng-show='tab.isSet(2)'></product-extras>
-    <product-review ng-show='tab.isSet(3)'></product-review>
+    <product-ingredients product='product' ng-show='tab.isSet(1)'></product-ingredients>
+    <product-extras product='product' ng-show='tab.isSet(2)'></product-extras>
+    <product-review product='product' ng-show='tab.isSet(3)'></product-review>
 </section>

@@ -5,6 +5,9 @@
         return {
             restrict: 'E',
             templateUrl: 'components/product/gallery/gallery.htm',
+            scope: {
+                product: '='
+            },
             controller: function() {
                 this.current = 0;
                 this.setCurrent = function(current) {

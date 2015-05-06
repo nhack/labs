@@ -5,6 +5,9 @@
         return {
             restrict: 'E',
             templateUrl: 'components/product/tabs/tabs.htm',
+            scope: {
+                product: '='
+            },
             controller: function() {
                 this.tab = 1;
 

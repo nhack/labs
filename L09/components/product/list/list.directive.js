@@ -4,7 +4,10 @@
     app.directive('productList', function(){
         return{
             restrict: 'E',
-            templateUrl: 'components/product/list/list.htm'
+            templateUrl: 'components/product/list/list.htm',
+            scope: {
+            	product: '='
+            }
         }
     });
 })();

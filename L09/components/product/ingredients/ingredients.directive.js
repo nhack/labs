@@ -4,7 +4,10 @@
     app.directive('productIngredients', function() {
         return {
             restrict: 'E',
-            templateUrl: 'components/product/ingredients/ingredients.htm'
+            templateUrl: 'components/product/ingredients/ingredients.htm',
+            scope:{
+            	product: '='
+            }
         };
     });
 })();
