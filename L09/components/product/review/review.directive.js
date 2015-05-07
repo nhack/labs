@@ -8,7 +8,7 @@
             scope: {
                 product: '='
             },
-            controller: function(SERVER, $http) {
+            controller: function(SERVER, $http, $sce) {
                 this.review = {};
 
                 this.addReview = function(product) {
@@ -28,6 +28,12 @@
                         });
                 };
 
+                this.toHtml = function(text) {
+                    if (text) {
+                        return $sce.trustAsHtml(markdown.toHTML(text));
+                    }
+                    return "";
+                };
             },
             link: function(scope, element) {
                 element.find('.expandable').on('click', function(event) {

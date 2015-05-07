@@ -4,7 +4,7 @@
         <h4 class='clickable expandable'>Reviews ({{product.reviews.length}})</h4>
         <li ng-repeat='review in product.reviews'>
             <blockquote>
-                <strong>{{review.stars}} Stars</strong> {{review.body}}
+                <strong>{{review.stars}} Stars</strong> <span ng-bind-html='reviewCtrl.toHtml(review.body)'/>
                 <cite class="clearfix">-{{review.author}} on {{review.createdOn | date}}</cite>
             </blockquote>
         </li>
@@ -13,7 +13,7 @@
     <form name="reviewForm" ng-submit='reviewForm.$valid && reviewCtrl.addReview(product)' novalidate>
         <!--  Live Preview -->
         <blockquote>
-            <strong>{{reviewCtrl.review.stars}} Stars</strong> {{reviewCtrl.review.body}}
+            <strong>{{reviewCtrl.review.stars}} Stars</strong> <span ng-bind-html='reviewCtrl.toHtml(reviewCtrl.review.body)'/> 
             <cite class="clearfix">-{{reviewCtrl.review.author}}</cite>
         </blockquote>
         <!--  Review Form -->
