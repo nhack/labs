@@ -1,14 +1,14 @@
 (function() {
     var app = angular.module('pizzaStore.products.review', []);
 
-    app.directive('productReview', function() {
+    app.directive('productReview', ['$sce', 'Pizza', function($sce, Pizza) {
         return {
             restrict: 'E',
             templateUrl: 'components/product/review/review.htm',
             scope: {
                 product: '='
             },
-            controller: function(SERVER, $http, $sce) {
+            controller: function() {
                 this.review = {};
 
                 this.addReview = function(product) {
@@ -18,7 +18,7 @@
                 };
 
                 this.saveReview = function(product, review) {
-                    $http.put(SERVER.URL + ':' + SERVER.PORT + SERVER.PATH + 'pizzas/addReview/' + product._id, review)
+                    Pizza.addReview(product._id, review)    
                         .success(function() {
                             product.reviews.push(review);
                             console.info('Added review: ' + review);
@@ -45,5 +45,5 @@
             },
             controllerAs: 'reviewCtrl'
         }
-    });
+    }]);
 })();

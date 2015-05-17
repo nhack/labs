@@ -1,10 +1,10 @@
 (function() {
     var app = angular.module('pizzaStore.store', []);
 
-    app.controller('StoreController', ['$http', 'SERVER', function($http, SERVER) {
+    app.controller('StoreController', ['Pizza', function(Pizza) {
         var store = this;
         store.products = [];
-        $http.get(SERVER.URL + ':' + SERVER.PORT + SERVER.PATH + 'pizzas').success(function(data) {
+        Pizza.all().success(function(data) {
             store.products = data;
         });
     }]);

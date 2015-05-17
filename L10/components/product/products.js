@@ -4,6 +4,7 @@
         'pizzaStore.products.gallery',
         'pizzaStore.products.ingredients',
         'pizzaStore.products.list',
+        'pizzaStore.products.repository',
         'pizzaStore.products.review',
         'pizzaStore.products.tabs',
         'pizzaStore.products.title'
