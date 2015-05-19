@@ -7,9 +7,9 @@
         'pizzaStore.utils'
     ]);
 
-    app.config(function(ImageProvider) {
+    app.config(['ImageProvider', function(ImageProvider) {
         ImageProvider.setPreamble('data:image/jpeg;base64,');
-    });
+    }]);
 
     app.constant('SERVER', {
         URL: 'http://pizza-store.herokuapp.com',
