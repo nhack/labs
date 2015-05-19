@@ -12,5 +12,5 @@
                 return $http.put(SERVER.URL + ':' + SERVER.PORT + SERVER.PATH + 'pizzas/addReview/' + pizzaId, review);
             }
         }
-    }])
+    }]);
 })();
