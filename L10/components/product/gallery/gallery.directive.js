@@ -1,7 +1,7 @@
 (function() {
     var app = angular.module('pizzaStore.products.gallery', []);
 
-    app.directive('productGallery', function() {
+    app.directive('productGallery', ['Image', function(Image) {
         return {
             restrict: 'E',
             templateUrl: 'components/product/gallery/gallery.htm',
@@ -14,10 +14,10 @@
                     this.current = current ? current : 0;
                 };
                 this.decode = function(encodedImage) {
-                    return "data:image/jpeg;base64," + encodedImage;
+                    return Image.decode(encodedImage);
                 }
             },
             controllerAs: 'gallery'
         }
-    });
+    }]);
 })();
