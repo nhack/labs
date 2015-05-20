@@ -1,5 +1,6 @@
 (function() {
     var app = angular.module('pizzaStore', [
+        'ngResource',
         'ui.router',
         'pizzaStore.store',
         'pizzaStore.store.pizza',

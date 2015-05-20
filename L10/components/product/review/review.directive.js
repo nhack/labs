@@ -18,12 +18,14 @@
                 };
 
                 this.saveReview = function(product, review) {
-                    Pizza.addReview(product._id, review)    
-                        .success(function() {
+                    Pizza.addReview({
+                            id: product._id
+                        }, review).$promise
+                        .then(function() {
                             product.reviews.push(review);
                             console.info('Added review: ' + review);
                         })
-                        .error(function() {
+                        .catch(function() {
                             console.error('Error while saving: ' + product);
                         });
                 };
