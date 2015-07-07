@@ -1,11 +1,11 @@
 <div class='cont'>
     <nav>
-        <category-select></category-select>
+        <category-select active-category='store.activeCategory'></category-select>
     </nav>
     <!--  Products Container  -->
     <div class="list-group flex-column">
         <!--  Product Container  -->
-        <div ng-repeat='product in store.products' class="list-group-item">
+        <div ng-repeat='product in store.products | filter:{category: store.activeCategory._id}' class="list-group-item">
             <!-- Product Title -->
             <product-list product='product'></product-list>
         </div>

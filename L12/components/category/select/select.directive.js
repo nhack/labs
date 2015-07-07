@@ -5,14 +5,20 @@
         return {
             restrict: 'EA',
             templateUrl: 'components/category/select/select.htm',
-            controller: ['Category', function(Category) {
-                this.activeCategory = null;
+            scope: {
+                activeCategory: '='
+            },
+            controller: ['$scope', 'Category', function($scope, Category) {
                 this.categories = Category.query();
                 this.setActiveCategory = function(category) {
-                    this.activeCategory = category;
+                    if ($scope.activeCategory && $scope.activeCategory._id === category._id) {
+                        $scope.activeCategory = null;
+                    } else {
+                        $scope.activeCategory = category;
+                    }
                 };
                 this.getActiveCategory = function() {
-                    return this.activeCategory;
+                    return $scope.activeCategory;
                 }
             }],
             controllerAs: 'select'
