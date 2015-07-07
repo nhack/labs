@@ -11,10 +11,10 @@
             controller: ['$scope', 'Category', function($scope, Category) {
                 this.categories = Category.query();
                 this.setActiveCategory = function(category) {
-                    if ($scope.activeCategory && $scope.activeCategory._id === category._id) {
-                        $scope.activeCategory = null;
+                    if ($scope.activeCategory === category._id) {
+                        $scope.activeCategory = undefined;
                     } else {
-                        $scope.activeCategory = category;
+                        $scope.activeCategory = category._id;
                     }
                 };
                 this.getActiveCategory = function() {

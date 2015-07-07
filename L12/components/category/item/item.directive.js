@@ -20,7 +20,7 @@
                     categorySelect.setActiveCategory(scope.category);
                 };
                 scope.item.isActive = function() {
-                    return scope.category === categorySelect.getActiveCategory();
+                    return scope.category._id === categorySelect.getActiveCategory();
                 }
             },
         }
